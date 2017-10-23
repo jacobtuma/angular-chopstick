@@ -1,0 +1,27 @@
+<div class="menu">
+  <h1>Cart {{cartItems?.length}}</h1>
+  <h3>Basic Rolls</h3>
+  <hr>
+  <div class="menu-back" *ngFor="let item of getByCategory('Basic Roll')">
+    <app-menu-item
+      [item]="item"
+    (select)="addToCart($event)">
+    </app-menu-item>
+  </div>
+
+  <h3>Cooked Rolls</h3>
+  <hr>
+  <div class="menu-back" *ngFor="let item of getByCategory('Cooked Rolls')">
+    <app-menu-item
+      [item]="item">
+    </app-menu-item>
+  </div>
+
+  <h3>Specialty Rolls</h3>
+  <hr>
+  <div class="menu-back" *ngFor="let item of getByCategory('Specialty Rolls')">
+    <app-menu-item
+      [item]="item">
+    </app-menu-item>
+  </div>
+</div>

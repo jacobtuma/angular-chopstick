@@ -16,7 +16,6 @@ export class AppComponent {
 
   items: MenuItem[] = [
     {
-      id: 11,
       name: 'California Roll',
       price: 8,
       category: 'sushi',
@@ -24,7 +23,6 @@ export class AppComponent {
       ingredients: ['rice', 'avacodo', 'crab']
     },
     {
-      id: 12,
       name: 'Shogun Roll',
       price: 2,
       category: 'sushi',
@@ -32,6 +30,7 @@ export class AppComponent {
       ingredients: ['rice', 'avacodo', 'crab']
     },
   ];
+
 
   addToCart(item: MenuItem): void {
     this.cart.push(item);
