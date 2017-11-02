@@ -1,39 +1,41 @@
 import {Component} from '@angular/core';
 
-import {MenuItem} from './menuitem.model';
-import {Cart} from './cart.model';
+import {MenuItem} from './models/menuitem.interface';
+
+import {UpdateCartService} from '../services/updatecart.service';
+
+interface Nav {
+  link: string;
+  name: string;
+  exact: boolean;
+}
 
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-
-
 export class AppComponent {
-  public cart = [];
+  inCart: number;
 
-  items: MenuItem[] = [
-    {
-      name: 'California Roll',
-      price: 8,
-      category: 'sushi',
-      description: 'Killer Cali Roll',
-      ingredients: ['rice', 'avacodo', 'crab']
-    },
-    {
-      name: 'Shogun Roll',
-      price: 2,
-      category: 'sushi',
-      description: 'Killer Shogun',
-      ingredients: ['rice', 'avacodo', 'crab']
-    },
-  ];
-
-
-  addToCart(item: MenuItem): void {
-    this.cart.push(item);
+  constructor(private updateCart: UpdateCartService) {
   }
+
+  nav: Nav[] = [{
+    link: '/',
+    name: 'HOME',
+    exact: true
+  },
+    {
+      link: '/menu',
+      name: 'MENU',
+      exact: false
+    },
+    {
+      link: '/cart',
+      name: `CART`,
+      exact: false
+    }];
 
 }

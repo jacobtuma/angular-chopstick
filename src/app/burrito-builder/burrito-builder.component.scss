@@ -1,0 +1,55 @@
+.container-fluid {
+  background: white;
+}
+a {
+  color: white;
+  background: gray;
+  padding: 3px 8px;
+  text-outline: none;
+}
+a {
+  cursor: pointer;
+}
+.successmessage {
+  color: green;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  border: 2px solid #21436d;
+  color: #21436d;
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+.fillings {
+  margin-bottom: 10px;
+}
+button[disabled] {
+  opacity: .7;
+}
+.fillings a, button {
+  background: #21436d;
+  max-width: 100%;
+  margin-bottom: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid #21436d;
+  color: #fff;
+  padding: 3px 4px;
+  border-radius: 4px;
+}
+.buttons {
+  margin-top: 15px;
+}
+.fillings input, .meats input, .addons input {
+  display: none;
+}
+
+.selected {
+  background: yellow !important;
+}
+.active {
+  background: peru !important;
+}

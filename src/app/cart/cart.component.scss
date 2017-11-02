@@ -1,0 +1,33 @@
+.cart-items {
+  height:300px;
+  width:100%;
+  padding: 30px;
+  overflow-y:auto;
+  position:relative;
+  margin-left:-5px;
+  background: lightgrey;
+
+}
+
+.container {
+  background: #eee;
+  border: 2px solid #ccc;
+  margin-top: 100px;
+  padding: 20px 30px 40px;
+  padding-left: 0;
+}
+.in-cart {
+  background: #A13E32;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 12px;
+  margin-left: 3px;
+  text-decoration: none;
+  cursor: pointer;
+  float: right;
+}
+.cart-items {
+  text-transform: capitalize;
+}
+
+

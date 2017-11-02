@@ -1,0 +1,32 @@
+a {
+  color: black;
+  cursor: pointer;
+}
+a:hover {
+  color: #4F94EE;
+  text-decoration: none;
+}
+.in-cart {
+  background: green;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 12px;
+  margin-left: 3px;
+}
+.remove {
+  background: #A13E32;;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 12px;
+  margin-left: 3px;
+}
+.minus {
+  background: blue;
+  color: white;
+  border-radius: 8px;
+  padding: 2px 3px;
+  margin-left: 2px;
+}
+h5 {
+  display: inline-block;
+}

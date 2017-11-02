@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <div class="col-md-7">
+    <form (ngSubmit)="handleSubmit(form.value, form.valid)" #form="ngForm" novalidate>
+      <h4>Choose One</h4>
+      <hr>
+      <div class="meats">
+        <label [ngClass]="{active: crab.checked}"><input type="radio" name="meat" value="crab" #crab
+                                                         [(ngModel)]="pokebowl.meat" required>Crab Mix</label>
+        <label [ngClass]="{active: tuna.checked}"><input type="radio" name="meat" value="tuna" #tuna
+                                                         [(ngModel)]="pokebowl.meat">Spicy Tuna</label>
+        <label [ngClass]="{active: yellowtail.checked}"><input type="radio" name="meat" value="yellowtail" #yellowtail
+                                                               [(ngModel)]="pokebowl.meat">Yellowtail</label>
+        <label [ngClass]="{active: salmon.checked}"><input type="radio" name="meat" value="salmon" #salmon
+                                                           [(ngModel)]="pokebowl.meat">Salmon</label>
+        <label [ngClass]="{active: shrimp.checked}"><input type="radio" name="meat" value="shrimp" #shrimp
+                                                           [(ngModel)]="pokebowl.meat">Shrimp</label>
+        <label [ngClass]="{active: seaweedsalad.checked}"><input type="radio" name="meat" value="seaweedsalad"
+                                                                 #seaweedsalad [(ngModel)]="pokebowl.meat">Seaweed Salad</label>
+
+      </div>
+      <h4>Fillings</h4>
+      <hr>
+      <div class="fillings">
+        <label [ngClass]="{active: microgreens.checked}"><input type="checkbox" name="microgreens" #microgreens
+                                                                [(ngModel)]="pokebowl.fillings.microgreens">Microgreens</label>
+        <label [ngClass]="{active: asparagus.checked}"><input type="checkbox" name="asparagus" #asparagus
+                                                              [(ngModel)]="pokebowl?.fillings.asparagus">Asparagus</label>
+        <label [ngClass]="{active: avocado.checked}"><input type="checkbox" name="avocado" #avocado
+                                                            [(ngModel)]="pokebowl?.fillings.avocado">Avocado</label>
+        <label [ngClass]="{active: carrots.checked}"><input type="checkbox" name="carrots" #carrots
+                                                            [(ngModel)]="pokebowl?.fillings.carrots">Carrots</label>
+        <label [ngClass]="{active: daikon.checked}"><input type="checkbox" name="daikon" #daikon
+                                                           [(ngModel)]="pokebowl?.fillings.daikon">Daikon</label>
+        <label [ngClass]="{active: scallions.checked}"><input type="checkbox" name="scallions" #scallions
+                                                              [(ngModel)]="pokebowl?.fillings.scallions">Scallions</label>
+        <label [ngClass]="{active: cucumber.checked}"><input type="checkbox" name="cucumber" #cucumber
+                                                             [(ngModel)]="pokebowl?.fillings.cucumber">Cucumber</label>
+        <label [ngClass]="{active: greensprouts.checked}"><input type="checkbox" name="greensprouts" #greensprouts
+                                                                 [(ngModel)]="pokebowl?.fillings.greensprouts">Green
+          Sprouts</label>
+        <label [ngClass]="{active: springmix.checked}"><input type="checkbox" name="springmix" #springmix
+                                                              [(ngModel)]="pokebowl?.fillings.springmix">Spring
+          Mix</label>
+        <label [ngClass]="{active: redcabbage.checked}"><input type="checkbox" name="redcabbage" #redcabbage
+                                                               [(ngModel)]="pokebowl?.fillings.redcabbage">Red
+          Cabbage</label>
+        <label [ngClass]="{active: creamcheese.checked}"><input type="checkbox" name="creamcheese" #creamcheese
+                                                                [(ngModel)]="pokebowl?.fillings.creamcheese">Cream
+          Cheese</label>
+        <label [ngClass]="{active: panko.checked}"><input type="checkbox" name="panko" #panko
+                                                          [(ngModel)]="pokebowl?.fillings.panko">Panko</label>
+        <label [ngClass]="{active: sesame.checked}"><input type="checkbox" name="sesame" #sesame
+                                                           [(ngModel)]="pokebowl?.fillings.sesame">Sesame</label>
+        <div class="buttons">
+          <a (click)="checkAll()">Check All</a>
+          <a (click)="checkNone()">Check None</a>
+        </div>
+      </div>
+      <h4>Addons - $2 Each</h4>
+      <hr>
+      <div class="addons">
+        <label [ngClass]="{active: seaweed.checked}"><input type="checkbox" name="seaweedsalad" #seaweed
+                                                            [(ngModel)]="pokebowl?.addons.seaweedsalad">Seaweed
+          Salad</label>
+        <label [ngClass]="{active: squid.checked}"><input type="checkbox" name="squidsalad" #squid
+                                                          [(ngModel)]="pokebowl?.addons.squidsalad">Squid Salad</label>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid">Add to Cart</button>
+    </form>
+    <div *ngIf="submitted" class="successmessage">
+      Added to cart!
+    </div>
+  </div>
+</div>

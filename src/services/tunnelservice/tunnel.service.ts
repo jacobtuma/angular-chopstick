@@ -23,8 +23,9 @@ export class TunnelService {
 
   getMenu() {
     const url = this.apiUrl + 'getMenu';
-    return this.http.get(url).map((res: Response) => res.json())
-      .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    return this.http.get(url)
+      .map((res: Response) => res.json())
+      .catch((error: any) => Observable.throw(error.json() || 'Server error'));
   }
 
 

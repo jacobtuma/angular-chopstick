@@ -1,12 +1,19 @@
-import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
-import {MenuItem} from '../menuitem.model';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+
+import {MenuItem} from '../models/menuitem.interface';
+
+import {UpdateCartService} from '../../services/updatecart.service';
 
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html',
-  styleUrls: ['./menu-item.component.css']
+  styleUrls: ['./menu-item.component.scss']
 })
 export class MenuItemComponent implements OnInit {
+
+  added = false;
+  inCart = 0;
+
   @Input()
   item: MenuItem;
 
@@ -16,24 +23,31 @@ export class MenuItemComponent implements OnInit {
   @Output()
   decrement: EventEmitter<any> = new EventEmitter();
 
-  amountSelected: number;
-
-  constructor() {
-    this.amountSelected = 0;
+  constructor(private updateCart: UpdateCartService) {
   }
 
   ngOnInit() {
+    this.amountInCart();
   }
 
-  decrementCart() {
-    if (this.amountSelected) {
-      this.amountSelected--;
-      this.decrement.emit(this.item);
+  addToCart() {
+    this.select.emit(this.item);
+    this.added = true;
+    this.inCart = this.updateCart.getAmountInCart(this.item)
+  }
+
+  amountInCart() {
+    this.inCart = this.updateCart.getAmountInCart(this.item);
+    if (this.inCart) {
+      this.added = true;
     }
   }
 
-  onSelect() {
-    this.select.emit(this.item);
-    this.amountSelected++;
+  remove() {
+    this.updateCart.removeItem(this.item);
+    this.inCart--
+    if (!this.inCart) {
+      this.added = false;
+    }
   }
 }

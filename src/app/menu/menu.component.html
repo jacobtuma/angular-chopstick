@@ -1,36 +1,78 @@
-
-<div class="menu-background">
-  <div class="menu container">
-    <app-navbar [cart]="cartItems"></app-navbar>
-
-    <h3>Basic Rolls</h3>
-    <hr>
-    <div class="menu-back" *ngFor="let item of getByCategory('Basic Roll')">
-      <app-menu-item
-        [item]="item"
-        (select)="addToCart($event)"
-        (decrement)="decrement($event)">
-      </app-menu-item>
-    </div>
-
-    <h3>Cooked Rolls</h3>
-    <hr>
-    <div class="menu-back" *ngFor="let item of getByCategory('Cooked Rolls')">
-      <app-menu-item
-        [item]="item"
-        (select)="addToCart($event)"
-        (decrement)="decrement($event)">
-      </app-menu-item>
-    </div>
-
-    <h3>Specialty Rolls</h3>
-    <hr>
-    <div class="menu-back" *ngFor="let item of getByCategory('Specialty Rolls')">
-      <app-menu-item
-        [item]="item"
-        (select)="addToCart($event)"
-        (decrement)="decrement($event)">
-      </app-menu-item>
-    </div>
+<div class="container">
+  <ngb-tabset>
+    <ngb-tab title="SUSHI">
+      <ng-template ngbTabContent>
+<h3>Basic</h3>
+  <div class="menu-back" *ngFor="let item of getByCategory('Basic Roll')">
+    <app-menu-item
+      [item]="item"
+      (select)="addToCart($event)"
+      (decrement)="decrement($event)">
+    </app-menu-item>
   </div>
+<h3>Cooked</h3>
+  <div class="menu-back" *ngFor="let item of getByCategory('Cooked Rolls')">
+    <app-menu-item
+      [item]="item"
+      (select)="addToCart($event)"
+      (decrement)="decrement($event)">
+    </app-menu-item>
+  </div>
+        <h3>Specialty</h3>
+        <div class="menu-back" *ngFor="let item of getByCategory('Specialty Rolls')">
+          <app-menu-item
+            [item]="item"
+            (select)="addToCart($event)"
+            (decrement)="decrement($event)">
+          </app-menu-item>
+        </div>
+
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="NIGIRI/SASHIMI">
+      <ng-template ngbTabContent>
+
+        <h3>Nigri/Sashimi</h3>
+        <div class="menu-back" *ngFor="let item of getByCategory('Nigiri/Sashimi')">
+          <app-menu-item
+            [item]="item"
+            (select)="addToCart($event)"
+            (decrement)="decrement($event)">
+          </app-menu-item>
+        </div>
+<span>*All Entries are UNCOOKED</span>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="SUSHI BURRITO">
+      <ng-template ngbTabContent>
+        <h3>Build a sushi burrito - $10 Veggie - $8</h3>
+
+<app-burrito-builder></app-burrito-builder>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="POKEBOWL">
+      <ng-template ngbTabContent>
+        <h3>Build a Pokebowl - $10 </h3>
+        <app-pokebowl-builder></app-pokebowl-builder>
+
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="DRINKS">
+      <ng-template ngbTabContent>
+        <h3>What Drinks?</h3>
+
+      </ng-template>
+    </ngb-tab>
+
+
+  </ngb-tabset>
+
+  <div class="added-message">
+    Added to Cart!
+  </div>
+
 </div>
+

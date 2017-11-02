@@ -1,0 +1,71 @@
+.header-bg {
+  background: url('../../assets/sushi.png');
+  background-size: cover;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 160px;
+  height: 90%;
+  width:100%;
+  top: 0;
+  clip-path: polygon(0 0, 160% 0, 100% 86%, 0 100%);
+}
+.main-container {
+  margin: 0;
+  padding: 0;
+  margin-top: -95px;
+  background: white;
+
+}
+.header-bg::after {
+  background: #000 url('../../assets/pattarn.png') repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+.header {
+  text-align: center;
+  padding-top: 200px;
+}
+.header h1 {
+  font-family: 'Rock Salt';
+  color: white;
+  font-size: 50px;
+}
+.header h2 {
+  font-family: 'PT Sans Narrow';
+  color: white;
+  font-size: 40px;
+}
+.section-two {
+  margin-bottom: 50px;
+}
+.section-two h1 {
+  font-family: 'Rock Salt';
+  color: #ca3d26;
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.section-two p {
+  color: #4a4d4f;
+  padding-bottom: 90px;
+}
+.viewmenu {
+border-radius: unset;
+  border: 1px solid white;
+  color: white;
+  background-color: #ca3d26;
+  font-family: "PT Sans Narrow";
+  letter-spacing: 2px;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 8px 26px;
+}
+
+.section-two img {
+  width: 100%;
+}

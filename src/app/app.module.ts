@@ -1,53 +1,63 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {CommonModule} from '@angular/common';
+import {RouterModule, Routes} from '@angular/router';
 import {HttpModule} from '@angular/http';
-import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import {AppComponent} from './app.component';
 
-import { AppComponent } from './app.component';
-import { AddItemComponent } from './add-item/add-item.component';
-import { HomeComponent } from './home/home.component';
-
-import { TunnelService} from '../services/tunnelservice/tunnel.service';
-import { HeaderComponent } from './header/header.component';
+import {HomeComponent} from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { MenuComponent } from './menu/menu.component';
-import { MenuItemComponent } from './menu-item/menu-item.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { CartComponent } from './cart/cart.component';
-// Define the routes
-const ROUTES = [
-  {
-    path: '',
-    redirectTo: 'home',
+import { ViewItemComponent } from './view-item/view-item.component';
+
+import {TunnelService} from '../services/tunnelservice/tunnel.service';
+import {UpdateCartService} from '../services/updatecart.service';
+import { MenuItemComponent } from './menu-item/menu-item.component';
+import { CarouselComponent } from './carousel/carousel.component';
+import { BurritoBuilderComponent } from './burrito-builder/burrito-builder.component';
+import { PokebowlBuilderComponent } from './pokebowl-builder/pokebowl-builder.component';
+
+const routes: Routes = [
+  { path: '',
+    component: HomeComponent,
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    component: HomeComponent
+  { path: 'menu',
+    component: MenuComponent,
   },
-  {
-    path: 'menu',
-    component: MenuComponent
-  }];
+  { path: 'cart',
+    component: CartComponent,
+  },
+  { path: '**',
+    component: NotFoundComponent
+  }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
-    AddItemComponent,
     HomeComponent,
-    HeaderComponent,
+    NotFoundComponent,
     MenuComponent,
+    CartComponent,
+    ViewItemComponent,
     MenuItemComponent,
-    NavbarComponent,
-    CartComponent
+    CarouselComponent,
+    BurritoBuilderComponent,
+    PokebowlBuilderComponent,
   ],
   imports: [
-    BrowserModule,
-    RouterModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES), // Add routes to the app
+    // Angular Modules
+    BrowserModule, HttpModule, CommonModule, FormsModule, RouterModule.forRoot(routes, {useHash: false}),
     NgbModule.forRoot()
   ],
-  providers: [TunnelService],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
+  providers: [TunnelService, UpdateCartService]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('chopstick App', () => {
+describe('t-chopstick App', () => {
   let page: AppPage;
 
   beforeEach(() => {
