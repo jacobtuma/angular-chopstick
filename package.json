@@ -10,19 +10,19 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "grunt sass:production && ng build"
+    "postinstall": "grunt sass:production && ng build --aot --prod"
   },
   "engines": {
-    "node":"~6.10.3",
-    "npm":"~3.10.5"
+    "node": "~6.10.3",
+    "npm": "~3.10.5"
   },
   "private": true,
   "dependencies": {
-    "@angular/cli": "1.0.3",
     "@angular/animations": "^4.2.4",
+    "@angular/cli": "1.0.3",
     "@angular/common": "^4.2.4",
-    "@angular/compiler-cli": "^4.0.0",
     "@angular/compiler": "^4.2.4",
+    "@angular/compiler-cli": "^4.0.0",
     "@angular/core": "^4.2.4",
     "@angular/forms": "^4.2.4",
     "@angular/http": "^4.2.4",
@@ -35,6 +35,7 @@
     "core-js": "^2.4.1",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "grunt": "^1.0.1",
     "http": "0.0.0",
     "mongoose": "^4.12.4",
     "path": "^0.12.7",
