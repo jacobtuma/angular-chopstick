@@ -13,12 +13,27 @@ export class MenuItemComponent implements OnInit {
   @Output()
   select: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  @Output()
+  decrement: EventEmitter<any> = new EventEmitter();
+
+  amountSelected: number;
+
+  constructor() {
+    this.amountSelected = 0;
+  }
 
   ngOnInit() {
   }
 
+  decrementCart() {
+    if (this.amountSelected) {
+      this.amountSelected--;
+      this.decrement.emit(this.item);
+    }
+  }
+
   onSelect() {
     this.select.emit(this.item);
+    this.amountSelected++;
   }
 }

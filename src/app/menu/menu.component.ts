@@ -38,6 +38,11 @@ export class MenuComponent implements OnInit {
     );
   }
 
+  decrement(e: MenuItem) {
+  this.cartItems.splice(this.cartItems.indexOf(e), 1);
+
+  }
+
   addToCart(e: MenuItem) {
     this.cartItems.push(e);
   }
