@@ -13,7 +13,7 @@ export class TunnelService {
   constructor(private http: Http) {
   }
 
-  private apiUrl = 'http://localhost:3000/api/';
+  private apiUrl = '/api/';
 
   itemPost(info) {
     const url = this.apiUrl + 'postItem';
