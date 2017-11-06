@@ -10,33 +10,7 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UpdateCartService {
-  cartItems: any[] = [{
-    category:
-      'Basic Roll',
-    description:
-      'Yellowtail, scallions, cucumber, mayo',
-    ingredients:
-      [''],
-    name:
-      'Yellowtail Roll',
-    price:
-      7,
-    _id: '59ed1108f37d99acc26ad481'
-  },
-    {
-      category:
-        'Basic Roll',
-      description:
-        'Yellowtail, scallions, cucumber, mayo',
-      ingredients:
-        [''],
-      name:
-        'Yellowtail Roll',
-      price:
-        10,
-      _id: '59ed1108f37d99acc26ad481'
-    }
-  ];
+  cartItems: any[] = [];
 
   constructor() {
   }

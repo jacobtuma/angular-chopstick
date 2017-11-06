@@ -13,6 +13,9 @@ import {UpdateCartService} from '../../services/updatecart.service';
 export class MenuComponent implements OnInit {
   menuItems: MenuItem[];
   cartItems: MenuItem[];
+  itemAdded = false;
+  justAddedItem: MenuItem;
+  justAddedAmount = 0;
 
   @Output()
   cart: EventEmitter<any> = new EventEmitter();
@@ -28,6 +31,10 @@ export class MenuComponent implements OnInit {
   addToCart(e) {
       // this.cart.emit(this.menuItems);
       this.updateCart.addItem(e);
+      this.itemAdded = true;
+      this.justAddedItem = e;
+      this.justAddedAmount = this.updateCart.getAmountInCart(e);
+      setTimeout(() => this.itemAdded = false, 5000);
   }
 
   decrement(e) {

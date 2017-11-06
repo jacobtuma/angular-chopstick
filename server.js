@@ -21,7 +21,7 @@ app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
-  res.redirect('/')
+  res.redirect('/');
 })
 /**
  * Get port from environment and store in Express.
