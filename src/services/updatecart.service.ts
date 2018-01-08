@@ -20,8 +20,10 @@ export class UpdateCartService {
     return this.cartItems;
   }
   getAmountInCart(e: MenuItem): number {
+    if (this.cartItems) {
+      return this.cartItems.filter((cartItem: MenuItem) => cartItem._id === e._id).length;
+    }
     this.cartItems = JSON.parse(localStorage.getItem('cart'));
-   return this.cartItems.filter((cartItem: MenuItem) => cartItem._id === e._id).length;
   }
 
   addItem(e) {
