@@ -70,10 +70,10 @@
 
   </ngb-tabset>
 
-  <div [ngClass]="{visible: itemAdded}" class="added-message">
+  <a routerLink="/cart"><div [ngClass]="{visible: itemAdded}" class="added-message">
     {{justAddedAmount}} {{justAddedItem?.name}} ${{justAddedItem?.price * justAddedAmount}}.00
 
-  </div>
+  </div></a>
 
 </div>
 

@@ -1,6 +1,6 @@
 <a (click)="addToCart()"><h5>
-  {{item?.name}} - ${{item?.price}} <span *ngIf="added" class="in-cart"> {{inCart}} in cart + </span>
-</h5></a> <a *ngIf="added" (click)="remove()"><span class="remove"> Remove -</span></a>
+  {{item?.name}} - ${{item?.price}}</h5></a> <br class="visible-xs"> <a (click)="addToCart()"><span *ngIf="added" class="in-cart"> {{inCart}} in cart + </span></a>
+ <a *ngIf="added" (click)="remove()"><span class="remove"> Remove -</span></a>
 <p>
   {{item?.description}}
 

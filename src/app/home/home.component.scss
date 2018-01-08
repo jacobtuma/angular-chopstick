@@ -7,13 +7,13 @@
   height: 90%;
   width:100%;
   top: 0;
-  clip-path: polygon(0 0, 160% 0, 100% 86%, 0 100%);
+  box-shadow: inset 0px -8px 7px 0px rgba(0, 0, 0, 1);
 }
 .main-container {
   margin: 0;
   padding: 0;
   margin-top: -95px;
-  background: white;
+  background: #000;
 
 }
 .header-bg::after {
@@ -42,7 +42,7 @@
   font-size: 40px;
 }
 .section-two {
-  margin-bottom: 50px;
+  background: black;
 }
 .section-two h1 {
   font-family: 'Rock Salt';
@@ -51,8 +51,8 @@
   margin-bottom: 20px;
 }
 .section-two p {
-  color: #4a4d4f;
-  padding-bottom: 90px;
+  color: #fff;
+  padding-bottom: 30px;
 }
 .viewmenu {
 border-radius: unset;
@@ -68,4 +68,39 @@ border-radius: unset;
 
 .section-two img {
   width: 100%;
+}
+.section-three {
+  background: #333333;
+  color: white;
+  padding-bottom: 60px;
+}
+.hours-div {
+  text-align: center;
+}
+.hours-div h3:after {
+  content: '';
+  top: 100%;
+  left: 0;
+  margin-top: -1px;
+  width: 100%;
+  height: 2px;
+  z-index: 0;
+  background-color: rgba(225,215,215,0.1);
+}
+.hours {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(225,215,215,0.6);
+  font-size: 14px;
+  padding: 5px 0;
+}
+.hours-div hr {
+  margin: 0;
+  border-color: rgba(225,215,215,0.2);
+}
+.hour-box {
+  margin-top: 30px;
+}
+.hours-div p {
+  padding: 15px 0 10px;
 }

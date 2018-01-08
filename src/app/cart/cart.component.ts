@@ -18,7 +18,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit() {
     this.cartItems = this.updateCart.getItems();
-    this.total = this.getTotal()
+    this.total = this.getTotal();
   }
 
   removeItem(item: MenuItem) {
@@ -32,6 +32,11 @@ export class CartComponent implements OnInit {
       total += this.cartItems[i].price;
     }
     return total;
+  }
+  checkOut(): void {
+    this.updateCart.emptyCart();
+    this.updateCart.getItems();
+    this.total = 0;
   }
 
 }
