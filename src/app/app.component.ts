@@ -17,8 +17,7 @@ interface Nav {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  cartItems: any[] = JSON.parse(localStorage.getItem('cart'));
-  numInCart: number = this.cartItems.length;
+  // cartItems: any[] = JSON.parse(localStorage.getItem('cart'));
 
   constructor(private updateCart: UpdateCartService) {
   }
